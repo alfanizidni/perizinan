@@ -138,13 +138,13 @@ class DataUji extends CI_Controller
 			if($kelas_izin_ya==0||$kelas_izin_tidak==0){
 				//masuk laplace correction
 				
-				$akhirjumlah_izin_ya=$jumlah_izin_ya+2;
-				$akhirjumlah_izin_tidak=$jumlah_izin_tidak+2;
-				$akhirtotal_training = $jumlah_izin_ya+$jumlah_izin_tidak+4;
+				$akhirjumlah_izin_ya=$jumlah_izin_ya+1;
+				$akhirjumlah_izin_tidak=$jumlah_izin_tidak+1;
+				$akhirtotal_training = $jumlah_izin_ya+$jumlah_izin_tidak+2;
 
 
-				$akhirPC1 = round($akhirjumlah_izin_ya/(($jumlah_izin_tidak+$jumlah_izin_ya)+4), 2);
-				$akhirPC0 = round($akhirjumlah_izin_tidak/(($jumlah_izin_tidak+$jumlah_izin_ya)+4), 2);
+				$akhirPC1 = round($akhirjumlah_izin_ya/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 2);
+				$akhirPC0 = round($akhirjumlah_izin_tidak/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 2);
 
 				$akhirkelas_izin_ya = 
 				round($jenis_izin_lpc['ya'],4)

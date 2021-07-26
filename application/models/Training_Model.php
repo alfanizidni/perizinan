@@ -208,13 +208,13 @@ class Training_Model extends CI_Model
 		$this->db->where('jenis_izin', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);	
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);	
 		
 		// $status = "izin tidak";
 		$this->db->where('jenis_izin', $status);
 		$this->db->where('status_izin', "Tidak");
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);
 	}
 
@@ -224,13 +224,13 @@ class Training_Model extends CI_Model
 		$this->db->where('jarak_izin', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);	
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);	
 		
 		// $status = "jarak tidak";
 		$this->db->where('jarak_izin', $status);
-		$this->db->where('status_izin', "Tidak");
+		$this->db->where('status_izin', "Tidak"); 
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);	
 	}
 
@@ -240,13 +240,13 @@ class Training_Model extends CI_Model
 		$this->db->where('lama_izin', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);
 		
 		// $status = "lama tidak";
 		$this->db->where('lama_izin', $status);
 		$this->db->where('status_izin', "Tidak");
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);	
 	}
 
@@ -256,13 +256,13 @@ class Training_Model extends CI_Model
 		$this->db->where('pelanggaran', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);
 		
 		// $status = "pelanggaran tidak";
 		$this->db->where('pelanggaran', $status);
 		$this->db->where('status_izin', "Tidak");
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);	
 	}
 
@@ -272,13 +272,13 @@ class Training_Model extends CI_Model
 		$this->db->where('terlambat_kembali', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);
 		
 		// $status = "terlambat_kembali tidak";
 		$this->db->where('terlambat_kembali', $status);
 		$this->db->where('status_izin', "Tidak");
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);	
 	}
 
@@ -288,13 +288,13 @@ class Training_Model extends CI_Model
 		$this->db->where('nilai_rapor', $status);
 		$this->db->where('status_izin', "Ya");
 		$this->db->from('tbl_training');
-		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+2);
+		$ya = ($this->db->count_all_results()+1)/($this->count_izin_ya()+1);
 		
 		// $status = "rapor tidak";
 		$this->db->where('nilai_rapor', $status);
 		$this->db->where('status_izin', "Tidak");
 		$this->db->from('tbl_training');
-		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+2);
+		$tidak = ($this->db->count_all_results()+1)/($this->count_izin_tidak()+1);
 		return array('ya' => $ya, 'tidak' => $tidak);	
 	}
 }

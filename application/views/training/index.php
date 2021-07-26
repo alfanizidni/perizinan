@@ -65,13 +65,14 @@
                       <label>Jenis Izin</label>
                       <select class="form-control" name="jenis_izin">
                         <option value="Kifayah Ortu">Kifayah Ortu</option>
-                        <option value="Kifayah Kakek/Nenek">Kifayah Kakek/Nenek</option>
+                        <option value="Kifayah Kakek">Kifayah Kakek</option>
+                        <option value="Kifayah Nenek">Kifayah Nenek</option>
                         <option value="Kifayah Kerabat">Kifayah Kerabat</option>
-                        <option value="Berobat Ringan">Berobat Ringan</option>
+                        <option value="Berobat">Berobat Ringan</option>
                         <option value="Sakit">Berobat Berat(Sakit)</option>
                         <option value="Acara Keluarga">Acara Keluarga</option>
-                        <option value="Mengurus Surat Diri">Mengurus Surat Diri</option>
-                        <option value="Dll(Menghadiri Undangan Acara)">Dll</option>                        
+                        <option value="Mengurus Surat">Mengurus Surat Diri</option>
+                        <option value="Dll">Dll(Menghadiri Undangan Acara)</option>                        
                       </select>
                     </div>
                     <div class="form-group">

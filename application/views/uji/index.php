@@ -68,7 +68,8 @@
                       <label>Jenis Izin</label>
                       <select class="form-control" name="jenis_izin">
                         <option value="Kifayah Ortu">Kifayah Ortu</option>
-                        <option value="Kifayah Kakek">Kifayah Kakek/Nenek</option>
+                        <option value="Kifayah Kakek">Kifayah Kakek</option>
+                        <option value="Kifayah Nenek">Kifayah Nenek</option>
                         <option value="Kifayah Kerabat">Kifayah Kerabat</option>
                         <option value="Berobat">Berobat Ringan</option>
                         <option value="Sakit">Berobat Berat(Sakit)</option>
