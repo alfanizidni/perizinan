@@ -81,43 +81,43 @@
                     <div class="form-group">
                       <label>Jarak Izin</label>
                       <select class="form-control" name="jarak_izin">
-                        <option value="Dekat">Dekat</option>
-                        <option value="Jauh">Jauh</option>
-                        <option value="Sangat Jauh">Sangat Jauh</option>
+                        <option value="Dekat">Dekat (Dalam Kota)</option>
+                        <option value="Jauh">Jauh (Luar Kota)</option>
+                        <option value="Sangat Jauh">Sangat Jauh (Luar Provinsi)</option>
                         </select>
                     </div>
                     <div class="form-group">
                       <label>Lama Izin</label>
                       <select class="form-control" name="lama_izin">
-                        <option value="Sebentar">Sebentar</option>
-                        <option value="Sedang">Sedang</option>
-                        <option value="Lama">Lama</option>
+                        <option value="Sebentar">Sebentar (1 Hari)</option>
+                        <option value="Sedang">Sedang (2-3 Hari)</option>
+                        <option value="Lama">Lama (7 Hari)</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label>Pelanggaran Santri</label>
                       <select class="form-control" name="pelanggaran">
                         <option value="Tidak Pernah">Tidak Pernah</option>
-                        <option value="Ringan">Ringan</option>
-                        <option value="Sedang">Sedang</option>
-                        <option value="Berat">Berat</option>
+                        <option value="Ringan">Ringan (&#60;50 Poin) </option>
+                        <option value="Sedang">Sedang (50-100 Poin) </option>
+                        <option value="Berat">Berat (100-200 Poin) </option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label>Keterlambatan Kembali</label>
                       <select class="form-control" name="terlambat_kembali">
                         <option value="Tidak Pernah">Tidak Pernah</option>
-                        <option value="Pernah">Pernah</option>
-                        <option value="Sering">Sering</option>
+                        <option value="Pernah">Pernah (&#60;5) </option>
+                        <option value="Sering">Sering (>5) </option>
                         </select>
                     </div>
                     <div class="form-group">
                       <label>Nilai Rapor</label>
                       <select class="form-control" name="nilai_rapor">
-                        <option value="Kurang">Kurang</option>
-                        <option value="Cukup">Cukup</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Sangat Baik">Sangat Baik</option>
+                        <option value="Kurang">Kurang (&#60;50) </option>
+                        <option value="Cukup">Cukup (50-70) </option>
+                        <option value="Baik">Baik (70-85)</option>
+                        <option value="Sangat Baik">Sangat Baik (85-100)</option>
                       </select>
                     </div>
                    
@@ -147,7 +147,6 @@
             <thead>
               <tr>
                 <th>No</th>
-                <!-- <th>Id Training</th> -->
                 <th>Nama</th>
                 <th>Jenis Izin</th>
                 <th>Jarak Izin</th>
@@ -164,8 +163,7 @@
               $no=1;
               foreach ($training as $row){ ?>
                 <tr>
-                  <td><?= $no ?></td>
-                  <!-- <td><?= $row->id_training ?></td> -->
+                  <td><?= $no ?></td>                 
                   <td><?= $row->nama ?></td>
                   <td><?= $row->jenis_izin ?></td>
                   <td><?= $row->jarak_izin ?></td>
@@ -200,7 +198,6 @@
 </div>
 
 
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -215,8 +212,8 @@
           <?php echo $this->session->flashdata('flash_hitung'); ?>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>

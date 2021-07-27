@@ -78,43 +78,43 @@
                     <div class="form-group">
                       <label>Jarak Izin</label>
                       <select class="form-control" name="jarak_izin">
-                        <option value="Dekat">Dekat</option>
-                        <option value="Jauh">Jauh</option>
-                        <option value="Sangat Jauh">Sangat Jauh</option>
+                        <option value="Dekat">Dekat (Dalam kota)</option>
+                        <option value="Jauh">Jauh (Luar Kota)</option>
+                        <option value="Sangat Jauh">Sangat Jauh (Luar Provinsi)</option>
                         </select>
                     </div>
                     <div class="form-group">
                       <label>Lama Izin</label>
                       <select class="form-control" name="lama_izin">
-                        <option value="Sebentar">Sebentar</option>
-                        <option value="Sedang">Sedang</option>
-                        <option value="Lama">Lama</option>
+                        <option value="Sebentar">Sebentar (1 Hari)</option>
+                        <option value="Sedang">Sedang (2-3 Hari)</option>
+                        <option value="Lama">Lama (7 Hari)</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label>Pelanggaran Santri</label>
                       <select class="form-control" name="pelanggaran">
                         <option value="Tidak Pernah">Tidak Pernah</option>
-                        <option value="Ringan">Ringan</option>
-                        <option value="Sedang">Sedang</option>
-                        <option value="Berat">Berat</option>
+                        <option value="Ringan">Ringan (&#60;50 Poin)</option>
+                        <option value="Sedang">Sedang (50-100 Poin)</option>
+                        <option value="Berat">Berat (100-200 Poin)</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label>Keterlambatan Kembali</label>
                       <select class="form-control" name="terlambat_kembali">
                         <option value="Tidak Pernah">Tidak Pernah</option>
-                        <option value="Pernah">Pernah</option>
-                        <option value="Sering">Sering</option>
+                        <option value="Pernah">Pernah (&#60;5)</option>
+                        <option value="Sering">Sering (>5)</option>
                         </select>
                     </div>
                     <div class="form-group">
                       <label>Nilai Rapor</label>
                       <select class="form-control" name="nilai_rapor">
-                        <option value="Kurang">Kurang</option>
-                        <option value="Cukup">Cukup</option>
-                        <option value="Baik">Baik</option>
-                        <option value="Sangat Baik">Sangat Baik</option>
+                        <option value="Kurang">Kurang (&#60;50)</option>
+                        <option value="Cukup">Cukup (50-70)</option>
+                        <option value="Baik">Baik (70-85)</option>
+                        <option value="Sangat Baik">Sangat Baik (85-100)</option>
                       </select>
                     </div>
                     <div class="form-group">

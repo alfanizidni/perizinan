@@ -143,8 +143,8 @@ class DataUji extends CI_Controller
 				$akhirtotal_training = $jumlah_izin_ya+$jumlah_izin_tidak+2;
 
 
-				$akhirPC1 = round($akhirjumlah_izin_ya/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 2);
-				$akhirPC0 = round($akhirjumlah_izin_tidak/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 2);
+				$akhirPC1 = round($akhirjumlah_izin_ya/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 4);
+				$akhirPC0 = round($akhirjumlah_izin_tidak/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 4);
 
 				$akhirkelas_izin_ya = 
 				round($jenis_izin_lpc['ya'],4)
@@ -198,8 +198,8 @@ class DataUji extends CI_Controller
 				$akhirPC1 = $PC1;
 				$akhirkelas_izin_ya = $kelas_izin_ya;
 				$akhirkelas_izin_tidak = $kelas_izin_tidak;
-				$akhirjumlah_izin_ya=$jumlah_izin_ya;
-				$akhirjumlah_izin_tidak=$jumlah_izin_tidak;
+				$akhirjumlah_izin_ya = $jumlah_izin_ya;
+				$akhirjumlah_izin_tidak = $jumlah_izin_tidak;
 				$akhirtotal_training = $total_training;
 
 			}
@@ -287,11 +287,11 @@ class DataUji extends CI_Controller
 
 			echo "<br>";
 			if ($akhirkelas_izin_ya >= $akhirkelas_izin_tidak) {
-				$kesimpulan = "Ya Diperbolehkan";
+				$kesimpulan = "&#34;Ya&#34; Diperbolehkan";
 				$operator = ">="; 
 				$this->Training_Model->tambah_data_uji_ya();
 			}else{
-				$kesimpulan = "Tidak Diperbolehkan";
+				$kesimpulan = "&#34;Tidak&#34; Diperbolehkan";
 				$operator = "<=";
 				$this->Training_Model->tambah_data_uji_tidak();
 			}
@@ -300,10 +300,8 @@ class DataUji extends CI_Controller
 			$output .= "<br>Dapat disimpulkan Bahwa Data Uji tersebut Santri ini  <b><u>".$kesimpulan."</u></b> Untuk mendapat IZIN dari Pengurus Perizinan ";
 
       // masukan hasil kesimpulan dalam parameter untuk di save
-			// $this->Uji_Model->tambah_data($kesimpulan);
 			$this->session->set_flashdata('flash_uji','dihitung' );
 			$this->session->set_flashdata('flash_hitung', $output );
-			// redirect('DataUji');
 			echo $output;
 			redirect('/DataUji/index');			
 		} 
