@@ -106,10 +106,7 @@ class DataUji extends CI_Controller
 			$terlambat_kembali_lpc = $this->Training_Model->Terlambat_Kembali_Laplace($this->input->post('terlambat_kembali'));
 			$nilai_rapor_lpc = $this->Training_Model->Nilai_Rapor_Laplace($this->input->post('nilai_rapor'));
 
-  //perhitungan //Step 1
-			 
-			
-
+  //perhitungan
    //Step 1
    //tampil
    
@@ -123,7 +120,6 @@ class DataUji extends CI_Controller
 			*round($pelanggaran['ya'], 4)
 			*round($terlambat_kembali['ya'], 4)
 			*round($nilai_rapor['ya'], 4)*$PC1;
-
 
 			$kelas_izin_tidak = 
 			round($jenis_izin['tidak'],4)
@@ -141,7 +137,6 @@ class DataUji extends CI_Controller
 				$akhirjumlah_izin_ya=$jumlah_izin_ya+1;
 				$akhirjumlah_izin_tidak=$jumlah_izin_tidak+1;
 				$akhirtotal_training = $jumlah_izin_ya+$jumlah_izin_tidak+2;
-
 
 				$akhirPC1 = round($akhirjumlah_izin_ya/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 4);
 				$akhirPC0 = round($akhirjumlah_izin_tidak/(($jumlah_izin_tidak+$jumlah_izin_ya)+2), 4);
@@ -234,7 +229,6 @@ class DataUji extends CI_Controller
 			</tr>
 			</thead>
 			</table>";
-
 
    //step 2
 			$output .= "----Probabilitas Data Uji----<br>";
