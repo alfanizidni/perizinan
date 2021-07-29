@@ -276,12 +276,8 @@ class DataUji extends CI_Controller
 			</thead>
 			</table>";
 
-
-
-
 			$kesimpulan = "";
 			$operator="";
-
 			echo "kelas ya".$akhirkelas_izin_ya."<br>";
 			echo "kelas tidak".$akhirkelas_izin_tidak."<br>";
 
@@ -306,13 +302,8 @@ class DataUji extends CI_Controller
 			redirect('/DataUji/index');			
 		} 
 	}
-
 	public function simpan_data_uji(){
 
 		$this->Training_Model->tambah_data_uji();
 	}
-
-
-
-
 }
