@@ -88,7 +88,7 @@
                       <select class="form-control" name="lama_izin">
                         <option value="Sebentar">Sebentar (1 Hari)</option>
                         <option value="Sedang">Sedang (2-3 Hari)</option>
-                        <option value="Lama">Lama (7 Hari)</option>
+                        <option value="Lama">Lama (&#60;4 Hari)</option>
                       </select>
                     </div>
                     <div class="form-group">
