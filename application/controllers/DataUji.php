@@ -87,10 +87,12 @@ class DataUji extends CI_Controller
 			$terlambat_kembali = array();
 			$nilai_rapor = array();
 
+			// Hitung jumlah data kelas
 			$jumlah_izin_ya = $this->Training_Model->count_izin_ya();
 			$jumlah_izin_tidak = $this->Training_Model->count_izin_tidak();
 			$total_training = $jumlah_izin_ya+$jumlah_izin_tidak;
 
+			// NAIVE BAYES
 			$jenis_izin = $this->Training_Model->Jenis_Izin($this->input->post('jenis_izin'));
 			$jarak_izin = $this->Training_Model->Jarak_Izin($this->input->post('jarak_izin'));
 			$lama_izin = $this->Training_Model->Lama_Izin($this->input->post('lama_izin'));
@@ -98,7 +100,7 @@ class DataUji extends CI_Controller
 			$terlambat_kembali = $this->Training_Model->Terlambat_Kembali($this->input->post('terlambat_kembali'));
 			$nilai_rapor = $this->Training_Model->Nilai_Rapor($this->input->post('nilai_rapor'));
 
-			// PERHITUNGAN LAPLACE CORRECTION 
+			//LAPLACE CORRECTION 
 			$jenis_izin_lpc = $this->Training_Model->Jenis_Izin_Laplace($this->input->post('jenis_izin'));
 			$jarak_izin_lpc = $this->Training_Model->Jarak_Izin_Laplace($this->input->post('jarak_izin'));
 			$lama_izin_lpc = $this->Training_Model->Lama_Izin_Laplace($this->input->post('lama_izin'));
@@ -106,13 +108,12 @@ class DataUji extends CI_Controller
 			$terlambat_kembali_lpc = $this->Training_Model->Terlambat_Kembali_Laplace($this->input->post('terlambat_kembali'));
 			$nilai_rapor_lpc = $this->Training_Model->Nilai_Rapor_Laplace($this->input->post('nilai_rapor'));
 
-  //perhitungan
-   //Step 1
-   //tampil
-   
+  
+			// -step1- Hitung PCi Naive Bayes
 			$PC1 = round($jumlah_izin_ya/($jumlah_izin_tidak+$jumlah_izin_ya), 4);
 			$PC0 = round($jumlah_izin_tidak/($jumlah_izin_tidak+$jumlah_izin_ya), 4);
 
+			// -step3- Hitung Naive Bayes 
 			$kelas_izin_ya = 
 			round($jenis_izin['ya'],4)
 			*round($jarak_izin['ya'], 4)
@@ -130,9 +131,8 @@ class DataUji extends CI_Controller
 			*round($nilai_rapor['tidak'], 4)*$PC0;
 
 			//cek nilai apakah probabilitas bernilai 0
-
-			if($kelas_izin_ya==0||$kelas_izin_tidak==0){
-				//masuk laplace correction
+			//jika 0 maka masuk laplace correction
+			if($kelas_izin_ya==0||$kelas_izin_tidak==0){				
 				
 				$akhirjumlah_izin_ya=$jumlah_izin_ya+1;
 				$akhirjumlah_izin_tidak=$jumlah_izin_tidak+1;
@@ -158,7 +158,7 @@ class DataUji extends CI_Controller
 				*round($nilai_rapor_lpc['tidak'], 4)*$akhirPC0;
 
 				
-				//pakai hasil perhitungan yang lama
+				//pakai 
 				$akhirjenis_izin_ya = round($jenis_izin_lpc['ya'],4);
 				$akhirjarak_izin_ya = round($jarak_izin_lpc['ya'],4);
 				$akhirlama_izin_ya = round($lama_izin_lpc['ya'],4);
@@ -174,7 +174,7 @@ class DataUji extends CI_Controller
 				$akhirrapor_tidak = round($nilai_rapor_lpc['tidak'],4);
 
 			}else{
-				//pakai hasil perhitungan yang lama
+				//perhitungan naive bayes
 				$akhirjenis_izin_ya = round($jenis_izin['ya'],4);
 				$akhirjarak_izin_ya = round($jarak_izin['ya'],4);
 				$akhirlama_izin_ya = round($lama_izin['ya'],4);

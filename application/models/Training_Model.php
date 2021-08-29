@@ -101,7 +101,7 @@ class Training_Model extends CI_Model
 		return $this->db->count_all_results();
 	}
 
-	// ambil probabilitas Jenis Izin
+	
 	public function Jenis_Izin($status)
 	{
 		// $status = "izin ya";
